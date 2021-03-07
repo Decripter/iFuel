@@ -11,7 +11,7 @@ de combustível gasto desde a última visita ao posto.
 ### Nota: Para que o iFuel consiga realizar um calculo mais preciso o ideal é sempre completar o tanque(se possível).
 
 ## Futuras Atualizações 
-### Manutenção veicular 
+### Manutenção Veicular 
 Já que o iFuel já vai estar acompanhando o seu historico de km rodados por que não te ajudar a lembrar de rever
 algums itens importantes como por exemplo troca de óleo, filtro de óleo entre outros, aguardem.
 
