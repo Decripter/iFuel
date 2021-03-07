@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:iFuel/newAb.dart';
 import 'homePage.dart';
 
@@ -9,7 +9,7 @@ void main() {
 class MyHomePg extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return CupertinoApp(
       initialRoute: '/',
       routes: {
         '/': (context) => HomePage(),

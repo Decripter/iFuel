@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,61 +15,63 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     mediaCons = (lastKm - untilLastKm) / lastAb;
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'iFuel',
-          style: TextStyle(fontWeight: FontWeight.bold),
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text('iFuel'),
+        trailing: CupertinoButton(
+          child: Text('+ Add'),
+          onPressed: () {
+            Navigator.of(context).pushNamed('/addAbast');
+          },
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(25.0),
-        child: Column(
-          children: [
-            Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-              Text(
-                'Penultimo Abastecimento:',
-                style: TextStyle(fontSize: 20),
-              )
-            ]),
-            Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-              Text(untilLastKm.toString() + ' KM',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            ]),
-            Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-              Text(untilLastAb.toString() + ' L',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            ]),
-            Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-              Text(
-                'Ultimo Abastecimento:',
-                style: TextStyle(fontSize: 20),
-              )
-            ]),
-            Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-              Text(
-                lastKm.toString() + ' KM',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-            ]),
-            Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-              Text(lastAb.toString() + ' L',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            ]),
-            Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-              Text(
-                'Media: ' + mediaCons.toStringAsPrecision(4) + ' KM/L',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              )
-            ]),
-          ],
+      child: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(25.0),
+          child: Column(
+            children: [
+              Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                Text(
+                  'Penultimo Abastecimento:',
+                  style: TextStyle(fontSize: 20),
+                )
+              ]),
+              Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                Text(untilLastKm.toString() + ' KM',
+                    style:
+                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              ]),
+              Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                Text(untilLastAb.toString() + ' L',
+                    style:
+                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              ]),
+              Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                Text(
+                  'Ultimo Abastecimento:',
+                  style: TextStyle(fontSize: 20),
+                )
+              ]),
+              Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                Text(
+                  lastKm.toString() + ' KM',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ]),
+              Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                Text(lastAb.toString() + ' L',
+                    style:
+                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              ]),
+              Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                Text(
+                  'Media: ' + mediaCons.toStringAsPrecision(4) + ' KM/L',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                )
+              ]),
+            ],
+          ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          Navigator.of(context).pushNamed('/addAbast');
-        },
       ),
     );
   }
