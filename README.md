@@ -15,6 +15,10 @@ de combustível gasto desde a última visita ao posto.
 Já que o iFuel já vai estar acompanhando o seu historico de km rodados por que não te ajudar a lembrar de rever
 algums itens importantes como por exemplo troca de óleo, filtro de óleo entre outros, aguardem.
 
+## Graph Credts:
+https://www.vecteezy.com/free-vector/car - Car Vectors by Vecteezy
+
+
 ## Footer:
 This project is a starting point for a Flutter application.
 
