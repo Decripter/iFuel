@@ -16,6 +16,7 @@ class _AddAbastState extends State<AddAbast> {
         body: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('Km:'),
               TextField(),
