@@ -1,6 +1,6 @@
 # iFuel
 
-A new Flutter project.
+Um novo projeto em Flutter que vai ajudar os usuarios a acompanhar o consumo de combustivel de seu veiculo.
 
 ## Getting Started
 
