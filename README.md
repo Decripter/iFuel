@@ -2,8 +2,20 @@
 
 Um novo projeto em Flutter que vai ajudar os usuarios a acompanhar o consumo de combustivel de seu veiculo.
 
-## Getting Started
+## Objetivo:
 
+O objetivo do iFuel é ajudar você a acompanhar o consumo de seu veículo.
+Inserindo as informações de km e voluma abastecido(litros) o iFuel calculará para você automaticamente a média 
+de combustível gasto desde a última visita ao posto.
+
+### Nota: Para que o iFuel consiga realizar um calculo mais preciso o ideal é sempre completar o tanque(se possível).
+
+## Futuras Atualizações 
+### Manutenção veicular 
+Já que o iFuel já vai estar acompanhando o seu historico de km rodados por que não te ajudar a lembrar de rever
+algums itens importantes como por exemplo troca de óleo, filtro de óleo entre outros, aguardem.
+
+## Footer:
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
