@@ -8,7 +8,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   var untilLastKm = 0;
   var untilLastAb = 0;
-  var lastKm = 1;
+  var lastKm = 16;
   var lastAb = 1;
   var mediaCons = 0.0;
   @override
@@ -19,6 +19,7 @@ class _HomePageState extends State<HomePage> {
       navigationBar: CupertinoNavigationBar(
         middle: Text('iFuel'),
         trailing: CupertinoButton(
+          padding: EdgeInsets.all(5.0),
           child: Text('+ Add'),
           onPressed: () {
             Navigator.of(context).pushNamed('/addAbast');
