@@ -5,12 +5,14 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
+var untilLastKm = 0;
+var untilLastAb = 0;
+var lastKm = 16;
+var lastAb = 1;
+var mediaCons = 0.0;
+var result;
+
 class _HomePageState extends State<HomePage> {
-  var untilLastKm = 0;
-  var untilLastAb = 0;
-  var lastKm = 16;
-  var lastAb = 1;
-  var mediaCons = 0.0;
   @override
   Widget build(BuildContext context) {
     mediaCons = (lastKm - untilLastKm) / lastAb;
@@ -22,7 +24,14 @@ class _HomePageState extends State<HomePage> {
           padding: EdgeInsets.all(5.0),
           child: Text('+ Add'),
           onPressed: () {
-            Navigator.of(context).pushNamed('/addAbast');
+            _awaitReturnValueFromSecondScreen(context);
+            setState(() {
+              //OS DADOS AINDA NAO AUALIZAM DIRETAMENTE
+              untilLastKm = untilLastKm;
+              untilLastAb = untilLastAb;
+              lastKm = lastKm;
+              lastAb = lastAb;
+            });
           },
         ),
       ),
@@ -76,4 +85,16 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+void _awaitReturnValueFromSecondScreen(BuildContext context) async {
+  // start the SecondScreen and wait for it to finish with a result
+  result = await Navigator.of(context).pushNamed('/addAbast');
+  print(result);
+  untilLastKm = lastKm;
+  untilLastAb = lastAb;
+  if (result != null) {
+    lastKm = int.parse(result);
+  }
+  // after the SecondScreen result comes back update the Text widget with it
 }
