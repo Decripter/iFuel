@@ -7,6 +7,9 @@ class AddAbast extends StatefulWidget {
 }
 
 class _AddAbastState extends State<AddAbast> {
+  final TextEditingController _controladorKM = TextEditingController();
+  final TextEditingController _controladorVolume = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return CupertinoApp(
@@ -40,14 +43,21 @@ class _AddAbastState extends State<AddAbast> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text('Km:'),
-                CupertinoTextField(),
+                CupertinoTextField(
+                  controller: _controladorKM,
+                  keyboardType: TextInputType.number,
+                ),
                 Text('Volume:'),
-                CupertinoTextField(),
+                CupertinoTextField(
+                  controller: _controladorVolume,
+                  keyboardType: TextInputType.number,
+                ),
                 Center(
                     child: CupertinoButton(
                         child: Text('Salvar'),
                         onPressed: () {
-                          Navigator.pop(context);
+                          Navigator.pop(context, _controladorKM.text);
+                          //Navigator.pop(context);
                         })),
               ],
             ),
